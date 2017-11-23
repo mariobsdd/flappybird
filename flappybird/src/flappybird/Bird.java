@@ -24,7 +24,7 @@ public class Bird {
         x = FlappyBird.WIDTH/2;
         y = FlappyBird.HEIGHT/2;
         try {
-            img = ImageIO.read(new File("sticker,375x360.u2.png"));
+            img = ImageIO.read(getClass().getResource("images/sticker,375x360.u2.png"));
         }
         catch(IOException e) {
             e.printStackTrace();

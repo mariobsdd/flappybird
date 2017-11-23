@@ -40,8 +40,9 @@ public class GamePanel extends JPanel {
         pauseFont = new Font("Arial", Font.BOLD, 48);
         
         try {
-        	pipeHead = ImageIO.read(new File("78px-Pipe.png"));
-        	pipeLength = ImageIO.read(new File("pipe_part.png"));
+            pipeHead = ImageIO.read(getClass().getResource("images/78px-Pipe.png"));
+            //pipeHead = Main.class.getResource("images/78px-Pipe.png");
+            pipeLength = ImageIO.read(getClass().getResource("images/pipe_part.png"));
         }
         catch(IOException e) {
             e.printStackTrace();
