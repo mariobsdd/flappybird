@@ -42,7 +42,7 @@ public class Bird {
     
     public void reset() {
         x = 640/2;
-        y = 640/2;
+        y = 640/2-75;
         vx = vy = 0;
     }
 

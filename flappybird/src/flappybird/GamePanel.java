@@ -27,7 +27,7 @@ public class GamePanel extends JPanel {
     private Bird bird;
     private ArrayList<Rectangle> rects;
     private FlappyBird fb;
-    private Font scoreFont, pauseFont;
+    private Font scoreFont, pauseFont, titleFont;
     public static final Color bg = new Color(0, 158, 158);
     public static final int PIPE_W = 50, PIPE_H = 30;
     private Image pipeHead, pipeLength;
@@ -69,13 +69,15 @@ public class GamePanel extends JPanel {
         }
         g.setFont(scoreFont);
         g.setColor(Color.BLACK);
-        g.drawString("Score: "+fb.getScore(), 10, 20);
+        g.drawString("Punteo: "+(int)(fb.getScore()/100), 10, 20);
         
         if(fb.paused()) {
             g.setFont(pauseFont);
             g.setColor(new Color(0,0,0,170));
-            g.drawString("PAUSED", FlappyBird.WIDTH/2-100, FlappyBird.HEIGHT/2-100);
-            g.drawString("PRESS SPACE TO BEGIN", FlappyBird.WIDTH/2-300, FlappyBird.HEIGHT/2+50);
+            g.drawString("Flappy Bird", FlappyBird.WIDTH/2-135, FlappyBird.HEIGHT/2-100);
+            titleFont = new Font("Comic Sans MS", Font.BOLD, 18);
+            g.setFont(titleFont);
+            g.drawString("Presiona ESPACIO para comenzar", FlappyBird.WIDTH/2-150, FlappyBird.HEIGHT-150);
         }
     }
 }

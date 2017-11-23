@@ -47,6 +47,7 @@ public class FlappyBird implements ActionListener, KeyListener {
         frame.setSize(WIDTH, HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
         frame.addKeyListener(this);
         
         paused = true;
@@ -78,7 +79,7 @@ public class FlappyBird implements ActionListener, KeyListener {
                     toRemove.add(r);
                 }
                 if(r.contains(bird.x, bird.y)) {
-                    JOptionPane.showMessageDialog(frame, "You lose!\n"+"Your score was: "+time+".");
+                    JOptionPane.showMessageDialog(frame, "Has Perdido!\n"+"Tu punteo fue: "+(int)(time/100)+".","¡Juego Terminado!", JOptionPane.INFORMATION_MESSAGE);
                     game = false;
                 }
             }
@@ -91,6 +92,7 @@ public class FlappyBird implements ActionListener, KeyListener {
             }
 
             if(!game) {
+                JOptionPane.showMessageDialog(frame, "Has Perdido!\n"+"Tu punteo fue: "+(int)(time/100)+".","¡Juego Terminado!", JOptionPane.INFORMATION_MESSAGE);
                 rects.clear();
                 bird.reset();
                 time = 0;
